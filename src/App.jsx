@@ -26,9 +26,8 @@ const App = () => {
   }
 
   const handleCreateItem = itemData => {
-    // createItem(itemData)
-    // .then(newItemData => setItems([...items, newItemData]))
-    setItems([...items, itemData])
+    createItem(itemData)
+    .then(newItemData => setItems([...items, newItemData]))
   }
 
   return (

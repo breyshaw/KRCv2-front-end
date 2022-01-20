@@ -1,6 +1,6 @@
 import * as tokenService from '../services/tokenService'
 
-const BASE_URL = `/api/items`
+const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/items`
 
 function createItem(itemData) {
   return fetch(BASE_URL, {
