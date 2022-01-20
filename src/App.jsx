@@ -24,7 +24,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <main>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -49,7 +49,7 @@ const App = () => {
         element={<AddItem/>}
         />
       </Routes>
-    </>
+    </main>
   )
 }
 

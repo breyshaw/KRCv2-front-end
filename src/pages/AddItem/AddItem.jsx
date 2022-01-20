@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import styles from './AddItem.module.css'
 
 const AddItem = () => {
   const navigate = useNavigate()
@@ -20,7 +21,7 @@ const AddItem = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-//call will go here to submit to API
+      //call will go here to submit to API
       navigate('/')
     } catch (err) {
       console.log(err)
@@ -34,45 +35,53 @@ const AddItem = () => {
   }
 
   return (
-    <form
-    autoComplete="off"
-    onSubmit={handleSubmit}
-  >
-    <input type="text" 
-    value={title}
-    name="title"
-    onChange={handleChange}
-    />
-        <input type="text" 
-    value={imageUrl}
-    name="imageUrl"
-    onChange={handleChange}
-    />
-        <input type="text" 
-    value={type}
-    name="type"
-    onChange={handleChange}
-    />
-        <input type="text" 
-    value={price}
-    name="price"
-    onChange={handleChange}
-    />
-        <textarea type="text" 
-    value={info}
-    name="info"
-    onChange={handleChange}
-    />
+    <main className={styles.container}>
 
-<div>
-        <button disabled={isFormInvalid()}>
-          Sign Up
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-  </form>
+      <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        <p>Item Name</p>
+        <input type="text"
+          value={title}
+          name="title"
+          onChange={handleChange}
+        />
+        <p>Image Url</p>
+        <input type="text"
+          value={imageUrl}
+          name="imageUrl"
+          onChange={handleChange}
+        />
+        <p>Item Type:</p>
+        <input type="text"
+          value={type}
+          name="type"
+          onChange={handleChange}
+        />
+        <p>Price</p>
+        <input type="text"
+          value={price}
+          name="price"
+          onChange={handleChange}
+        />
+        <p>Info</p>
+        <textarea type="text"
+          value={info}
+          name="info"
+          onChange={handleChange}
+        />
+
+        <div>
+          <button disabled={isFormInvalid()}>
+            Add Item
+          </button>
+          <Link to="/">
+            <button>Cancel</button>
+          </Link>
+        </div>
+      </form>
+    </main>
   );
 
 }
