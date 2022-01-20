@@ -8,9 +8,11 @@ import Profiles from './pages/Profiles/Profiles'
 import AddItem from './pages/AddItem/AddItem'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import { createItem } from './services/itemService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [items, setItems] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -21,6 +23,12 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleCreateItem = itemData => {
+    // createItem(itemData)
+    // .then(newItemData => setItems([...items, newItemData]))
+    setItems([...items, itemData])
   }
 
   return (
@@ -46,7 +54,7 @@ const App = () => {
         />
         <Route
         path="/addItem"
-        element={<AddItem/>}
+        element={<AddItem handleCreateItem={handleCreateItem} />}
         />
       </Routes>
     </main>

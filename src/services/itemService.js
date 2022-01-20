@@ -6,11 +6,11 @@ function createItem(itemData) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json'
+      'Authorization': `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json'
     },
     body: JSON.stringify(itemData)
   })
-    .then(res => res.json())
+  .then(res => res.json())
 }
 
 export { createItem }

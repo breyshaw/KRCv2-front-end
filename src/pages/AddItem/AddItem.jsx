@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './AddItem.module.css'
 
-const AddItem = () => {
+const AddItem = (props) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     title: '',
@@ -21,7 +21,7 @@ const AddItem = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      //call will go here to submit to API
+      props.handleCreateItem(formData)
       navigate('/')
     } catch (err) {
       console.log(err)
