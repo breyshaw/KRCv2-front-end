@@ -59,7 +59,7 @@ useEffect(() => {
         />
         <Route
         path="/addItem"
-        element={<AddItem handleCreateItem={handleCreateItem} />}
+        element={user ? <AddItem handleCreateItem={handleCreateItem} /> : <Navigate to="/login" />}
         />
         <Route
         path="/items"
