@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -8,12 +8,17 @@ import Profiles from './pages/Profiles/Profiles'
 import AddItem from './pages/AddItem/AddItem'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
-import { createItem } from './services/itemService'
+import { createItem, getItems } from './services/itemService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [items, setItems] = useState([])
   const navigate = useNavigate()
+
+useEffect(() => {
+  getItems()
+  .then(items => setItems(items))
+}, [])
 
   const handleLogout = () => {
     authService.logout()
