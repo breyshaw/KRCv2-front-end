@@ -6,6 +6,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import AddItem from './pages/AddItem/AddItem'
+import Items from './pages/Items/Items'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import { createItem, getItems } from './services/itemService'
@@ -59,6 +60,10 @@ useEffect(() => {
         <Route
         path="/addItem"
         element={<AddItem handleCreateItem={handleCreateItem} />}
+        />
+        <Route
+        path="/items"
+        element={<Items items={items}/>}
         />
       </Routes>
     </main>
