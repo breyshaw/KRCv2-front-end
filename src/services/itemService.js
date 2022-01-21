@@ -20,7 +20,16 @@ function getItems() {
   .then(res => res.json())
 }
 
+function deleteItem(id) {
+return fetch(`${BASE_URL}/${id}`, {
+  method: 'DELETE',
+  headers: {'Authorization': `Bearer ${tokenService.getToken()}`}
+})
+.then(res => res.json())
+}
+
 export { 
   createItem,
-  getItems
+  getItems,
+  deleteItem
  }

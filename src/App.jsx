@@ -9,7 +9,7 @@ import AddItem from './pages/AddItem/AddItem'
 import Items from './pages/Items/Items'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
-import { createItem, getItems } from './services/itemService'
+import { createItem, getItems, deleteItem } from './services/itemService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -32,8 +32,19 @@ useEffect(() => {
   }
 
   const handleCreateItem = itemData => {
+    //make API call to create item
     createItem(itemData)
+    //update state
     .then(newItemData => setItems([...items, newItemData]))
+  }
+
+  const handleDeleteItem = id => {
+    // make API call to delete item
+    deleteItem(id)
+    // update state by creating a new array of all items except the one deleted
+    .then(deletedItem => {
+      setItems(items.filter(item => item._id !== deletedItem._id))
+    })
   }
 
   return (
@@ -63,8 +74,8 @@ useEffect(() => {
         />
         <Route
         path="/items"
-        // sending user here for isAdmin functionality down the road
-        element={<Items items={items} user={user}/>}
+        // sending user here for isAdmin functionality down the road.... if I can figure out how to pull it off
+        element={<Items items={items} handleDeleteItem={handleDeleteItem} user={user}/>}
         />
       </Routes>
     </main>
