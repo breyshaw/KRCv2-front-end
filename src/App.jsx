@@ -63,7 +63,8 @@ useEffect(() => {
         />
         <Route
         path="/items"
-        element={<Items items={items}/>}
+        // sending user here for isAdmin functionality down the road
+        element={<Items items={items} user={user}/>}
         />
       </Routes>
     </main>
