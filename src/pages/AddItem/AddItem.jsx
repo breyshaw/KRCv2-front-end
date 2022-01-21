@@ -22,7 +22,7 @@ const AddItem = (props) => {
     e.preventDefault()
     try {
       props.handleCreateItem(formData)
-      navigate('/')
+      navigate('/items')
     } catch (err) {
       console.log(err)
     }
