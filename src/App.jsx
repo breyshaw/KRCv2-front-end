@@ -8,6 +8,7 @@ import Profiles from './pages/Profiles/Profiles'
 import AddItem from './pages/AddItem/AddItem'
 import Items from './pages/Items/Items'
 import ItemDetails from './pages/ItemDetails/ItemDetails'
+import EditItem from './pages/EditItem/EditItem'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import { createItem, getItems, deleteItem } from './services/itemService'
@@ -82,6 +83,7 @@ useEffect(() => {
         path="/itemDetails"
         element={<ItemDetails />}
         />
+        <Route path="/editItem" element={<EditItem />} />
       </Routes>
     </main>
   )

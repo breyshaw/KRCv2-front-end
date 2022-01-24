@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+import { useLocation,Link } from 'react-router-dom';
 
 
 const Items = (props) => {
+  const location = useLocation()
   return (
     <>
       <h1>Items</h1>
@@ -18,7 +19,7 @@ const Items = (props) => {
             <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
 
             {(props.user.isAdmin) &&
-            <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-warning">Edit</button>
+            <Link to="/editItem" className="btn btn-warning" state={item}>Edit</Link>
             }
             {(props.user.isAdmin) &&
             <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger">Delete</button>
