@@ -12,7 +12,7 @@ const EditItem = (props) => {
     info: location.state.info,
     id: location.state._id
   })
-  
+
   const handleChange = e => {
     setFormData({
       ...formData,

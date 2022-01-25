@@ -11,6 +11,7 @@ const AddItem = (props) => {
     price: '',
     info: '',
   })
+
   const handleChange = e => {
     setFormData({
       ...formData,

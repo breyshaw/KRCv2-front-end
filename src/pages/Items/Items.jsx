@@ -1,8 +1,6 @@
-import { useLocation,Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 const Items = (props) => {
-  const location = useLocation()
   return (
     <>
       <h1>Items</h1>

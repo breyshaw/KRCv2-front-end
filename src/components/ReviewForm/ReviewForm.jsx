@@ -18,7 +18,7 @@ const ReviewForm = (props) => {
     e.preventDefault()
     try {
       props.handleAddReview(formData)
-      setFormData({rating: '', content: '', itemId:props.itemId})
+      setFormData({ rating: '', content: '', itemId: props.itemId })
     } catch (err) {
       console.log(err)
     }
@@ -30,10 +30,10 @@ const ReviewForm = (props) => {
     return !(content && rating)
   }
 
-  return ( 
+  return (
     <>
-    <h3>Add a review:</h3>
-    <form
+      <h3>Add a review:</h3>
+      <form
         autoComplete="off"
         onSubmit={handleSubmit}
       >
