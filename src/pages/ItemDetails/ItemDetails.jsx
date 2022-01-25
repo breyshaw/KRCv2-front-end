@@ -16,8 +16,9 @@ const ItemDetails = (props) => {
     {location.state.reviews.length ? 
     <>
     {location.state.reviews.map(review => 
-      <div>
+      <div key={review._id}>
         <p>{review.content}</p>
+        <p>Reviewed by: {review.author.name}</p>
       </div>
       )}
     </>
