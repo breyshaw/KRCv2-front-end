@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
 const ItemDetails = () => {
   const location = useLocation()
@@ -11,6 +12,7 @@ const ItemDetails = () => {
     <p>{location.state.info}</p>
     <h2>Price:</h2>
     <p>{location.state.price}</p>
+    <ReviewForm />
     </>
   );
 }
