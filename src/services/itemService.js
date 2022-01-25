@@ -20,6 +20,18 @@ function getItems() {
   .then(res => res.json())
 }
 
+function updateItem(itemData) {
+  return fetch(`${BASE_URL}/${itemData.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(itemData)
+  })
+  .then(res => res.json())
+}
+
+
 function deleteItem(id) {
 return fetch(`${BASE_URL}/${id}`, {
   method: 'DELETE',
@@ -31,5 +43,6 @@ return fetch(`${BASE_URL}/${id}`, {
 export { 
   createItem,
   getItems,
+  updateItem,
   deleteItem
  }

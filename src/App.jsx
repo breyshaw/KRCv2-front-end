@@ -11,7 +11,7 @@ import ItemDetails from './pages/ItemDetails/ItemDetails'
 import EditItem from './pages/EditItem/EditItem'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
-import { createItem, getItems, deleteItem } from './services/itemService'
+import { createItem, getItems, deleteItem, updateItem } from './services/itemService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -38,6 +38,15 @@ useEffect(() => {
     createItem(itemData)
     //update state
     .then(newItemData => setItems([...items, newItemData]))
+  }
+
+  const handleUpdateItem = (itemData) => {
+    updateItem(itemData)
+    .then(updatedItemData => {
+      const newItemArray = items.map(item => item._id === updatedItemData._id ? updatedItemData : item)
+      setItems(newItemArray)
+      navigate('/items')
+    })
   }
 
   const handleDeleteItem = id => {
@@ -83,7 +92,7 @@ useEffect(() => {
         path="/itemDetails"
         element={<ItemDetails />}
         />
-        <Route path="/editItem" element={<EditItem />} />
+        <Route path="/editItem" element={<EditItem handleUpdateItem={handleUpdateItem} />} />
       </Routes>
     </main>
   )
