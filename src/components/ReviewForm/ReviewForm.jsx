@@ -18,6 +18,7 @@ const ReviewForm = (props) => {
     e.preventDefault()
     try {
       props.handleAddReview(formData)
+      setFormData({rating: '', content: ''})
     } catch (err) {
       console.log(err)
     }
