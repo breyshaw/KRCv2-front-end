@@ -40,9 +40,21 @@ return fetch(`${BASE_URL}/${id}`, {
 .then(res => res.json())
 }
 
+function addReview(reviewFormData) {
+  return fetch(`${BASE_URL}/${reviewFormData.itemId}/reviews`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(reviewFormData)
+  })
+  .then(res => res.json())
+}
+
 export { 
   createItem,
   getItems,
   updateItem,
-  deleteItem
+  deleteItem,
+  addReview
  }

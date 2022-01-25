@@ -11,7 +11,7 @@ import ItemDetails from './pages/ItemDetails/ItemDetails'
 import EditItem from './pages/EditItem/EditItem'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
-import { createItem, getItems, deleteItem, updateItem } from './services/itemService'
+import { createItem, getItems, deleteItem, updateItem, addReview } from './services/itemService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -58,8 +58,13 @@ useEffect(() => {
     })
   }
 
-  const handleAddReview = () => {
-    
+  const handleAddReview = (reviewFormData) => {
+    addReview(reviewFormData)
+    .then(updatedItemData => {
+      const newItemArray = items.map(item => item._id === updatedItemData._id ? updatedItemData : item)
+      setItems(newItemArray)
+      navigate('/itemDetails', {state: updatedItemData})
+    })
   }
 
   return (
@@ -94,7 +99,7 @@ useEffect(() => {
         />
         <Route
         path="/itemDetails"
-        element={<ItemDetails />}
+        element={<ItemDetails handleAddReview={handleAddReview} />}
         />
         <Route path="/editItem" element={<EditItem handleUpdateItem={handleUpdateItem} />} />
       </Routes>
