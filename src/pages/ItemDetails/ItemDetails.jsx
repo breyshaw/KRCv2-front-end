@@ -12,6 +12,17 @@ const ItemDetails = (props) => {
     <p>{location.state.info}</p>
     <h2>Price:</h2>
     <p>{location.state.price}</p>
+    <h1>Reviews:</h1>
+    {location.state.reviews.length ? 
+    <>
+    {location.state.reviews.map(review => 
+      <div>
+        <p>{review.content}</p>
+      </div>
+      )}
+    </>
+    : <h3>No reviews for this item.</h3>
+}
     <ReviewForm handleAddReview={props.handleAddReview} itemId={location.state._id} />
     </>
   );

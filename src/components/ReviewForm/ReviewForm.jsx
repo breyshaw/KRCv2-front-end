@@ -31,7 +31,7 @@ const ReviewForm = (props) => {
 
   return ( 
     <>
-    <h3>Reviews:</h3>
+    <h3>Add a review:</h3>
     <form
         autoComplete="off"
         onSubmit={handleSubmit}
