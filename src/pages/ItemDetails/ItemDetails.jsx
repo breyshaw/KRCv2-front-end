@@ -12,7 +12,7 @@ const ItemDetails = () => {
     <p>{location.state.info}</p>
     <h2>Price:</h2>
     <p>{location.state.price}</p>
-    <ReviewForm />
+    <ReviewForm itemId={location.state._id} />
     </>
   );
 }

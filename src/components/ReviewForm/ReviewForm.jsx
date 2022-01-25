@@ -4,6 +4,7 @@ const ReviewForm = (props) => {
   const [formData, setFormData] = useState({
     content: '',
     rating: '',
+    itemId: props.itemId,
   })
 
   const handleChange = e => {

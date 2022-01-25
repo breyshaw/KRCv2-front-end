@@ -58,6 +58,10 @@ useEffect(() => {
     })
   }
 
+  const handleAddReview = () => {
+    
+  }
+
   return (
     <main>
       <NavBar user={user} handleLogout={handleLogout} />
