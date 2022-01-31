@@ -19,6 +19,7 @@ const NavBar = ({ user, handleLogout }) => {
           <ul>
             <li><Link to="/login">Log In</Link></li>
             <li><Link to="/signup">Sign Up</Link></li>
+            <li><Link to="/items">All Items</Link></li>
           </ul>
         </nav>
       }
