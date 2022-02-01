@@ -18,11 +18,6 @@ function getItems() {
   .then(res => res.json())
 }
 
-function getClothes() {
-  return fetch('/clothes')
-  .then(res => res.json())
-}
-
 function updateItem(itemData) {
   return fetch(`${BASE_URL}/${itemData.id}`, {
     method: 'PATCH',
@@ -60,5 +55,4 @@ export {
   updateItem,
   deleteItem,
   addReview,
-  getClothes
- }
+}

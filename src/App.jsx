@@ -12,7 +12,7 @@ import EditItem from './pages/EditItem/EditItem'
 import Clothes from './pages/Clothes/Clothes'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
-import { createItem, getItems, deleteItem, updateItem, addReview, getClothes } from './services/itemService'
+import { createItem, getItems, deleteItem, updateItem, addReview } from './services/itemService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -105,6 +105,14 @@ useEffect(() => {
         <Route
         path="/clothes"
         element={<Clothes items={items} user={user}/>}
+        />
+         <Route
+        path="/tumblers"
+        element={<Tumblers items={items} user={user}/>}
+        />
+         <Route
+        path="/misc"
+        element={<Misc items={items} user={user}/>}
         />
       </Routes>
     </main>
