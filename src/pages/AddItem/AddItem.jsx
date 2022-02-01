@@ -55,11 +55,15 @@ const AddItem = (props) => {
           onChange={handleChange}
         />
         <p>Item Type:</p>
-        <input type="text"
+        <select name="type"
           value={type}
-          name="type"
           onChange={handleChange}
-        />
+        >
+          <option>--Please choose an item type--</option>
+          <option>clothes</option>
+          <option>tumblers</option>
+          <option>misc</option>
+        </select>
         <p>Price</p>
         <input type="text"
           value={price}
