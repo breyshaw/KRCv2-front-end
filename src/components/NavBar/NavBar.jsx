@@ -12,6 +12,9 @@ const NavBar = ({ user, handleLogout }) => {
             <li><Link to="/changePassword">Change Password</Link></li>
             <li><Link to="/addItem">Add Item</Link></li>
             <li><Link to="/items">All Items</Link></li>
+            <li><Link to="/clothes">Clothing</Link></li>
+            <li><Link to="/tumblers">Tumblers</Link></li>
+            <li><Link to="/misc">Misc. Crafts</Link></li>
           </ul>
         </nav>
         :
@@ -20,6 +23,9 @@ const NavBar = ({ user, handleLogout }) => {
             <li><Link to="/login">Log In</Link></li>
             <li><Link to="/signup">Sign Up</Link></li>
             <li><Link to="/items">All Items</Link></li>
+            <li><Link to="/clothes">Clothing</Link></li>
+            <li><Link to="/tumblers">Tumblers</Link></li>
+            <li><Link to="/misc">Misc. Crafts</Link></li>
           </ul>
         </nav>
       }
