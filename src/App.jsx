@@ -9,9 +9,10 @@ import AddItem from './pages/AddItem/AddItem'
 import Items from './pages/Items/Items'
 import ItemDetails from './pages/ItemDetails/ItemDetails'
 import EditItem from './pages/EditItem/EditItem'
+import Clothes from './pages/Clothes/Clothes'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
-import { createItem, getItems, deleteItem, updateItem, addReview } from './services/itemService'
+import { createItem, getItems, deleteItem, updateItem, addReview, getClothes } from './services/itemService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -94,7 +95,6 @@ useEffect(() => {
         />
         <Route
         path="/items"
-        // sending user here for isAdmin functionality down the road.... if I can figure out how to pull it off
         element={<Items items={items} handleDeleteItem={handleDeleteItem} user={user}/>}
         />
         <Route
@@ -102,6 +102,10 @@ useEffect(() => {
         element={<ItemDetails handleAddReview={handleAddReview} />}
         />
         <Route path="/editItem" element={<EditItem handleUpdateItem={handleUpdateItem} />} />
+        <Route
+        path="/clothes"
+        element={<Clothes items={items} user={user}/>}
+        />
       </Routes>
     </main>
   )
