@@ -10,6 +10,8 @@ import Items from './pages/Items/Items'
 import ItemDetails from './pages/ItemDetails/ItemDetails'
 import EditItem from './pages/EditItem/EditItem'
 import Clothes from './pages/Clothes/Clothes'
+import Tumblers from './pages/Tumblers/Tumblers'
+import Misc from './pages/Misc/Misc'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import { createItem, getItems, deleteItem, updateItem, addReview } from './services/itemService'
@@ -19,10 +21,10 @@ const App = () => {
   const [items, setItems] = useState([])
   const navigate = useNavigate()
 
-useEffect(() => {
-  getItems()
-  .then(items => setItems(items))
-}, [])
+  useEffect(() => {
+    getItems()
+      .then(items => setItems(items))
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
@@ -37,35 +39,35 @@ useEffect(() => {
   const handleCreateItem = itemData => {
     //make API call to create item
     createItem(itemData)
-    //update state
-    .then(newItemData => setItems([...items, newItemData]))
+      //update state
+      .then(newItemData => setItems([...items, newItemData]))
   }
 
   const handleUpdateItem = (itemData) => {
     updateItem(itemData)
-    .then(updatedItemData => {
-      const newItemArray = items.map(item => item._id === updatedItemData._id ? updatedItemData : item)
-      setItems(newItemArray)
-      navigate('/items')
-    })
+      .then(updatedItemData => {
+        const newItemArray = items.map(item => item._id === updatedItemData._id ? updatedItemData : item)
+        setItems(newItemArray)
+        navigate('/items')
+      })
   }
 
   const handleDeleteItem = id => {
     // make API call to delete item
     deleteItem(id)
-    // update state by creating a new array of all items except the one deleted
-    .then(deletedItem => {
-      setItems(items.filter(item => item._id !== deletedItem._id))
-    })
+      // update state by creating a new array of all items except the one deleted
+      .then(deletedItem => {
+        setItems(items.filter(item => item._id !== deletedItem._id))
+      })
   }
 
   const handleAddReview = (reviewFormData) => {
     addReview(reviewFormData)
-    .then(updatedItemData => {
-      const newItemArray = items.map(item => item._id === updatedItemData._id ? updatedItemData : item)
-      setItems(newItemArray)
-      navigate('/itemDetails', {state: updatedItemData})
-    })
+      .then(updatedItemData => {
+        const newItemArray = items.map(item => item._id === updatedItemData._id ? updatedItemData : item)
+        setItems(newItemArray)
+        navigate('/itemDetails', { state: updatedItemData })
+      })
   }
 
   return (
@@ -90,29 +92,29 @@ useEffect(() => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
         <Route
-        path="/addItem"
-        element={user ? <AddItem handleCreateItem={handleCreateItem} /> : <Navigate to="/login" />}
+          path="/addItem"
+          element={user ? <AddItem handleCreateItem={handleCreateItem} /> : <Navigate to="/login" />}
         />
         <Route
-        path="/items"
-        element={<Items items={items} handleDeleteItem={handleDeleteItem} user={user}/>}
+          path="/items"
+          element={<Items items={items} handleDeleteItem={handleDeleteItem} user={user} />}
         />
         <Route
-        path="/itemDetails"
-        element={<ItemDetails handleAddReview={handleAddReview} />}
+          path="/itemDetails"
+          element={<ItemDetails handleAddReview={handleAddReview} />}
         />
         <Route path="/editItem" element={<EditItem handleUpdateItem={handleUpdateItem} />} />
         <Route
-        path="/clothes"
-        element={<Clothes items={items} user={user}/>}
+          path="/clothes"
+          element={<Clothes items={items} user={user} />}
         />
-         <Route
-        path="/tumblers"
-        element={<Tumblers items={items} user={user}/>}
+        <Route
+          path="/tumblers"
+          element={<Tumblers items={items} user={user} />}
         />
-         <Route
-        path="/misc"
-        element={<Misc items={items} user={user}/>}
+        <Route
+          path="/misc"
+          element={<Misc items={items} user={user} />}
         />
       </Routes>
     </main>
