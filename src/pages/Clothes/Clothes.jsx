@@ -4,7 +4,7 @@ const Clothes = (props) => {
   // props.items.filter(i => props.item.type === 'clothes')
   return (
     <>
-      <h1>Items</h1>
+      <h1>Clothing</h1>
       <div className="row">
         {props.items
           .filter(item => item.type === 'clothes')

@@ -13,4 +13,21 @@ code {
     monospace;
 }
 
+.card {
+  background-color: rebeccapurple;
+  color: whitesmoke;
+  opacity: 78%;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: black;
+  margin: 10px;
+}
+
+body {
+  background-image: url('../public/Images/plaster_seamless_texture_4375.jpg');
+  background-position: center;
+  font-family: 'Boogaloo', cursive;
+  margin: 0;
+}
+
 

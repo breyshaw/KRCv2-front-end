@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Items = (props) => {
   return (
     <>
-      <h1>Items</h1>
+      <h1>All Items</h1>
       <div className="row">
         {props.items.map(item =>
           <div key={item._id} className="col-sm-3">

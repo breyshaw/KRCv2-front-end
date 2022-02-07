@@ -4,7 +4,7 @@ const Misc = (props) => {
   // props.items.filter(i => props.item.type === 'clothes')
   return (
     <>
-      <h1>Items</h1>
+      <h1>Misc. Items</h1>
       <div className="row">
         {props.items
           .filter(item => item.type === 'misc')

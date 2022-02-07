@@ -4,7 +4,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <>
       {user ?
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">Katie Rayne Creations</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@ const NavBar = ({ user, handleLogout }) => {
           </div>
         </nav>
         :
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">Katie Rayne Creations</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,10 +56,10 @@ const NavBar = ({ user, handleLogout }) => {
                   <a className="nav-link active" aria-current="page" href="/misc">Misc</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/signup">Sign-Up</a>
+                  <a className="nav-link active" aria-current="page" href="/login">Login</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/login">Login</a>
+                  <a className="nav-link active" aria-current="page" href="/signup">Sign-Up</a>
                 </li>
               </ul>
             </div>
