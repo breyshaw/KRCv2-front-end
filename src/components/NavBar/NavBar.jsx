@@ -25,6 +25,11 @@ const NavBar = ({ user, handleLogout }) => {
                 <a class="nav-link active" aria-current="page" href="/misc">Misc</a>
               </li>
               <li class="nav-item"><Link class="nav-link active" aria-current="page" to="" onClick={handleLogout}>LOG OUT</Link></li>
+              {user ?
+                (user.isAdmin) &&
+                <Link to="/addItem" className="btn btn-primary">Add Item</Link>
+                : ''
+              }
             </ul>
           </div>
         </div>
