@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from './krc_logo.png'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
@@ -6,7 +7,7 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">Katie Rayne Creations</a>
+            <a className="navbar-brand" href="/"><img src={logo} alt="" width="30" height="24" class="d-inline-block align-text-top"/>Katie Rayne Creations</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -37,7 +38,8 @@ const NavBar = ({ user, handleLogout }) => {
         :
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">Katie Rayne Creations</a>
+            <a className="navbar-brand" href="/">  
+            <img src={logo} alt="" width="30" height="24" class="d-inline-block align-text-top"/>Katie Rayne Creations</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
