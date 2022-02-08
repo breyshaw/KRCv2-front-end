@@ -8,11 +8,11 @@ const ItemDetails = (props) => {
   return (
     <main className={styles.container}>
       <div className="card bg-dark text-white text-center" style={{ width: '32rem' }}>
-        <img src="..." className="card-img-top" alt="..." />
+        <img src={location.state.imageUrl} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{location.state.title}</h5>
           <p className="card-text">{location.state.info}</p>
-          <p className="card-text">Price: {location.state.info}</p>
+          <p className="card-text">Price: {location.state.price}</p>
         </div>
         {location.state.reviews.length ?
           <>
