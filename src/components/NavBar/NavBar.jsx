@@ -14,18 +14,18 @@ const NavBar = ({ user, handleLogout }) => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/items">All Items</a>
+                  <a className="nav-link active" aria-current="page" href="/items"><h2>All Items</h2></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/clothes">Clothing</a>
+                  <a className="nav-link active" aria-current="page" href="/clothes"><h2>Clothing</h2></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/tumblers">Tumblers</a>
+                  <a className="nav-link active" aria-current="page" href="/tumblers"><h2>Tumblers</h2></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/misc">Misc</a>
+                  <a className="nav-link active" aria-current="page" href="/misc"><h2>Misc</h2></a>
                 </li>
-                <li className="nav-item"><Link className="nav-link active" aria-current="page" to="" onClick={handleLogout}>LOG OUT</Link></li>
+                <li className="nav-item"><Link className="nav-link active text-danger" aria-current="page" to="" onClick={handleLogout}>LOG OUT</Link></li>
                 {user ?
                   (user.isAdmin) &&
                   <Link to="/addItem" className="btn btn-primary">Add Item</Link>
@@ -60,10 +60,10 @@ const NavBar = ({ user, handleLogout }) => {
                   <a className="nav-link active" aria-current="page" href="/misc"><h2>Misc</h2></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/login"><h3>Login</h3></a>
+                  <a className="nav-link active" aria-current="page" href="/login"><h3 className="text-primary">Login</h3></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/signup"><h3>Sign-Up</h3></a>
+                  <a className="nav-link active" aria-current="page" href="/signup"><h3 className="text-primary">Sign-Up</h3></a>
                 </li>
               </ul>
             </div>
