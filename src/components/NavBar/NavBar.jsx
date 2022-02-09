@@ -36,7 +36,7 @@ const NavBar = ({ user, handleLogout }) => {
           </div>
         </nav>
         :
-        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light border border-dark bg-gradient opacity-75">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">  
             <img src={logo} alt="" width="30" height="24" class="d-inline-block align-text-top"/>Katie Rayne Creations</a>
