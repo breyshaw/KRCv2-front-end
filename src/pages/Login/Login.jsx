@@ -17,6 +17,8 @@ const LoginPage = props => {
         handleSignupOrLogin={props.handleSignupOrLogin}
         updateMessage={updateMessage}
       />
+      <h2>New here?</h2>
+      <a className='btn btn-primary' href="/signup">Signup</a>
     </main>
   )
 }

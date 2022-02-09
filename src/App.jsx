@@ -101,7 +101,7 @@ const App = () => {
         />
         <Route
           path="/itemDetails"
-          element={<ItemDetails handleAddReview={handleAddReview} />}
+          element={<ItemDetails handleAddReview={handleAddReview} user={user} />}
         />
         <Route path="/editItem" element={<EditItem handleUpdateItem={handleUpdateItem} />} />
         <Route

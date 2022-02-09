@@ -26,9 +26,13 @@ const ItemDetails = (props) => {
             <li className="list-group-item">No Reviews for this item.</li>
           </ul>
         }
+
+        { props.user ? 
         <div className="card-body">
           <ReviewForm handleAddReview={props.handleAddReview} itemId={location.state._id} />
         </div>
+        : <a className="btn btn-primary" href="/login">Want to leave a review? Click here to login!</a> 
+        } 
       </div>
     </main>
   );
