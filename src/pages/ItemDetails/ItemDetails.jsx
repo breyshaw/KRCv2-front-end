@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
 import styles from './ItemDetails.module.css'
+import fb from './fb.png'
 
 const ItemDetails = (props) => {
   const location = useLocation()
@@ -10,16 +11,19 @@ const ItemDetails = (props) => {
       <div className="card bg-dark text-white text-center" style={{ width: '32rem' }}>
         <img src={location.state.imageUrl} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{location.state.title}</h5>
+          <h1 className="card-title">{location.state.title}</h1>
           <p className="card-text">{location.state.info}</p>
-          <p className="card-text">Price: {location.state.price}</p>
+          <p className="card-text m-0">Price: {location.state.price}</p>
+          <a href="https://m.facebook.com/KatieRayneCreations/?__tn__=%2Cg">
+          <img className="w-25 p-3" src={fb} alt="" />
+          </a>
+          <p className="card-text mt-0">Interested in this item? <br /> Click <a href="https://m.facebook.com/KatieRayneCreations/?__tn__=%2Cg">here</a> to contact me on Facebook or send an email to <a href="mailto:katielea811@aol.com">katielea811@aol.com</a></p>
         </div>
         {location.state.reviews.length ?
           <>
             {location.state.reviews.map(review =>
               <ul key={review._id} className="list-group list-group-flush">
                 <li className="list-group-item"><p>
-                  
                   Rating: {review.rating} <br /> Review: <br /> {review.content} <br /> By: {review.author.name}
                   </p>
                   </li>
