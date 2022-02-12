@@ -32,26 +32,43 @@ const ReviewForm = (props) => {
 
   return (
     <>
-      <h3>Add a review:</h3>
       <form
+        className='form-group'
         autoComplete="off"
         onSubmit={handleSubmit}
       >
-        <p>Rating:</p>
+        {/* <p>Rating:</p>
         <input type="text"
           value={rating}
           name="rating"
           onChange={handleChange}
-        />
+        /> */}
+        <p>Rating:</p>
+        <select 
+          className='form-control'
+          name="rating"
+          value={rating}
+          onChange={handleChange}
+        >
+          <option>--Please select a Rating--</option>
+          <option>5 - AMAZING!</option>
+          <option>4 - Really Good!</option>
+          <option>3 - Average</option>
+          <option>2 - Not so great</option>
+          <option>1 - Don't recommend</option>
+        </select>
+
         <p>Review:</p>
-        <textarea type="text"
+        <textarea 
+          type="text"
           value={content}
           name="content"
+          className='form-control'
           onChange={handleChange}
         />
 
         <div>
-          <button disabled={isFormInvalid()}>
+          <button className='btn btn-primary mt-2' disabled={isFormInvalid()}>
             Add Review
           </button>
         </div>
