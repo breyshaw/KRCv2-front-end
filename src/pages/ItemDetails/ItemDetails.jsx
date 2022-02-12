@@ -29,6 +29,7 @@ const ItemDetails = (props) => {
 
         { props.user ? 
         <div className="card-body">
+          <h2>Hey {props.user.name}! Leave a review if you've enjoyed your purchase. </h2>
           <ReviewForm handleAddReview={props.handleAddReview} itemId={location.state._id} />
         </div>
         : <a className="btn btn-primary" href="/login">Want to leave a review? Click here to login!</a> 
