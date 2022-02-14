@@ -11,6 +11,11 @@
   height: auto;
 }
 
+.feed {
+  align-self: center;
+  width: 540px;
+}
+
 p {
   font-size: 1.6rem;
   text-align: center;
