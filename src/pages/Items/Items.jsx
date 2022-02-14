@@ -14,16 +14,16 @@ const Items = (props) => {
                 <img src={item.imageUrl} className="card-img-bottom" alt={item.imageUrl}></img>
               </div>
 
-              <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
+              <Link to='/itemDetails' state={item} className="btn btn-primary border border-dark">Details</Link>
 
               {props.user ?
                 (props.user.isAdmin) &&
-                <Link to="/editItem" className="btn btn-warning" state={item}>Edit</Link>
+                <Link to="/editItem" className="btn btn-warning border border-dark" state={item}>Edit</Link>
                 : ''
               }
               {props.user ?
                 (props.user.isAdmin) &&
-                <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger">Delete</button>
+                <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger border border-dark">Delete</button>
                 : ''
               }
             </div>
