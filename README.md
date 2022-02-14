@@ -2,7 +2,7 @@
 
 Katie Rayne Creations Version 2 is custom clothing, tumbler, and craft site for my wife's small business. I completely remade it from the original MEN Stack application to use the wonderful capabilites of React! This is the front-end of the decoupled application. The backend can be found here: https://github.com/breyshaw/KRCv2-back-end
 
-The site is officially deployed! Visit KRCv2 [here!](https://krcreations.herokuapp.com/).
+The site is officially deployed! Visit KRCv2 [here!](https://krcreations.herokuapp.com/)
 
 ## Motivation: 
 I wanted to create an application that I will continue to work on developing as my wife's business expands.
