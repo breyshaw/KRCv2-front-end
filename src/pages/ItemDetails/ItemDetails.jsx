@@ -24,7 +24,7 @@ const ItemDetails = (props) => {
           <p className="card-text m-0">Price: ${location.state.price}</p>
           <p className="card-text">{location.state.info}</p>
           <a href="https://m.facebook.com/KatieRayneCreations/?__tn__=%2Cg">
-          <img className="w-25 p-3" src={fb} alt="" />
+          <img src={fb} alt="" />
           </a>
           <p className="card-text mt-0">Interested in this item? <br /> Click <a href="https://m.facebook.com/KatieRayneCreations/?__tn__=%2Cg">here</a> to contact me on Facebook or send an email to <a href="mailto:katielea811@aol.com">katielea811@aol.com</a></p>
         </div>
