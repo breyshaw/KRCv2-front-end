@@ -20,7 +20,7 @@ const Clothes = (props) => {
                 : ''
               }
                 { item.videoUrl ? 
-                <video className='card-img-top' controls autoplay='true'>
+                <video className='card-img-top' autoplay='true'>
                 <source src={item.videoUrl} type="video/mp4"/>
               </video>
                 : ''
