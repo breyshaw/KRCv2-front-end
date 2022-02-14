@@ -14,7 +14,9 @@ const ItemDetails = (props) => {
         : ''
       }
       {location.state.videoUrl ? 
-        <video src={location.state.videoUrl} className="card-img-top" alt="" />
+        <video className='card-img-top' controls autoplay='true'>
+        <source src={location.state.videoUrl} type="video/mp4"/>
+      </video>
         : ''
       }
         <div className="card-body">

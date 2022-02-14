@@ -16,11 +16,12 @@ const Items = (props) => {
                   : ''
                 }
                 {item.videoUrl ?
-                  <video className='card-img-bottom' src={item.videoUrl}></video>
+                  <video className='card-img-top'controls autoplay='true'>
+                    <source src={item.videoUrl} type="video/mp4"/>
+                  </video>
                   : ''
                 }
               </div>
-
               <Link to='/itemDetails' state={item} className="btn btn-primary border border-dark">Details</Link>
 
               {props.user ?
