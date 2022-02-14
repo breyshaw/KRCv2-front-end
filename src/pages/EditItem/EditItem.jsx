@@ -37,24 +37,33 @@ const EditItem = (props) => {
 
   return (
     <>
-      <main className={styles.container}>
-        <form
-          autoComplete="off"
-          onSubmit={handleSubmit}
-        >
-          <p>Item Name</p>
-          <input type="text"
+         <main className='text-center'>
+      <h1 className='mt-4 mb-0'>Post an item, Admin!</h1>
+      <form
+        className={styles.container}
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        <div className="col-4">
+          <p className='form-label'>Item Name</p>
+          <input
+            className='form-control border border-dark'
+            type="text"
             value={title}
             name="title"
             onChange={handleChange}
           />
-          <p>Image Url</p>
+        </div>
+        <div className="col-8">
+          <p className='form-label'>Image Url</p>
           <input type="text"
+            className='form-control border border-dark'
             value={imageUrl}
             name="imageUrl"
             onChange={handleChange}
           />
-          <div className="col-8">
+        </div>
+        <div className="col-8">
           <p className='form-label'>Video URL (not required)</p>
           <input type="text"
             className='form-control border border-dark'
@@ -63,35 +72,47 @@ const EditItem = (props) => {
             onChange={handleChange}
           />
         </div>
-          <p>Item Type:</p>
-          <input type="text"
+        <div className="col-4">
+          <p className='form-label'>Item Type:</p>
+          <select name="type"
+            className='form-control border border-dark'
             value={type}
-            name="type"
             onChange={handleChange}
-          />
-          <p>Price</p>
+          >
+            <option>--Please choose an item type--</option>
+            <option>clothes</option>
+            <option>tumblers</option>
+            <option>misc</option>
+          </select>
+        </div>
+        <div className="col-2">
+          <p className='form-label'>Price</p>
           <input type="text"
+            className='form-control border border-dark'
             value={price}
             name="price"
             onChange={handleChange}
           />
-          <p>Info</p>
+        </div>
+        <div className="col-8 mb-3">
+          <p className='form-label'>Info</p>
           <textarea type="text"
+            className='form-control border border-dark'
             value={info}
             name="info"
             onChange={handleChange}
           />
-
-          <div>
-            <button className="btn btn-success" disabled={isFormInvalid()}>
-              Edit Item
-            </button>
-            <Link to="/items">
-              <button className="btn btn-danger">Cancel</button>
-            </Link>
-          </div>
-        </form>
-      </main>
+        </div>
+        <div div className="mb-3">
+          <button className='btn btn-primary border border-dark' disabled={isFormInvalid()}>
+            Save Item
+          </button>
+          <Link to="/">
+            <button className='btn btn-danger border border-dark'>Cancel</button>
+          </Link>
+        </div>
+      </form>
+    </main>
     </>
   );
 }
