@@ -19,7 +19,9 @@ const Clothes = (props) => {
                 : ''
               }
                 { item.videoUrl ? 
-                <video className='card-img-bottom' src={item.videoUrl}></video>
+                <video className='card-img-top' controls autoplay='true'>
+                <source src={item.videoUrl} type="video/mp4"/>
+              </video>
                 : ''
               }
                 </div>
