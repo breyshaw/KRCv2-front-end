@@ -3,9 +3,9 @@ import logo from './krc_logo.png'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
-    <>
+    <main>
       {user ?
-        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light border border-dark bg-gradient opacity-75">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light border rounded border-dark border-2 bg-gradient opacity-75">
           <div className="container-fluid">
             <a className="navbar-brand" href="/"><img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top" />Katie Rayne Creations</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@ const NavBar = ({ user, handleLogout }) => {
           </div>
         </nav>
         :
-        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light border border-dark bg-gradient opacity-75">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light border rounded border-dark border-2 bg-gradient opacity-75">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               <img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top" />Katie Rayne Creations</a>
@@ -70,7 +70,7 @@ const NavBar = ({ user, handleLogout }) => {
           </div>
         </nav>
       }
-    </>
+    </main>
   )
 }
 
