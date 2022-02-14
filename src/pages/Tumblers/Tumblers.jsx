@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import styles from '../Landing/Landing.module.css'
 
 const Tumblers = (props) => {
   // props.items.filter(i => props.item.type === 'clothes')
   return (
-    <>
+    <main className={styles.container}>
       <h1>Tumblers</h1>
       <div className="row">
         {props.items
@@ -42,7 +43,7 @@ const Tumblers = (props) => {
             </div>
           )}
       </div>
-    </>
+    </main>
 
   );
 }

@@ -8,7 +8,7 @@ const ItemDetails = (props) => {
 
   return (
     <main className={styles.container}>
-      <div className="card bg-dark text-white text-center" style={{ width: '32rem' }}>
+      <div className="card bg-dark text-white text-center">
         {location.state.imageUrl ? 
         <img src={location.state.imageUrl} className="card-img-top" alt="" />
         : ''

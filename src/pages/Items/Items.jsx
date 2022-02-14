@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import styles from '../Landing/Landing.module.css'
 
 const Items = (props) => {
   return (
-    <>
+    <main className={styles.container}>
       <h1>All Items</h1>
       <div className="row">
         {props.items.map(item =>
@@ -38,7 +39,7 @@ const Items = (props) => {
           </div>
         )}
       </div>
-    </>
+    </main>
 
   );
 }
