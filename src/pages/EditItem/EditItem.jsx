@@ -29,7 +29,7 @@ const EditItem = (props) => {
     }
   }
 
-  const { title, imageUrl, type, price, info } = formData
+  const { title, imageUrl, videoUrl, type, price, info } = formData
 
   const isFormInvalid = () => {
     return !(title && info)
@@ -54,6 +54,15 @@ const EditItem = (props) => {
             name="imageUrl"
             onChange={handleChange}
           />
+          <div className="col-8">
+          <p className='form-label'>Video URL (not required)</p>
+          <input type="text"
+            className='form-control border border-dark'
+            value={videoUrl}
+            name="videoUrl"
+            onChange={handleChange}
+          />
+        </div>
           <p>Item Type:</p>
           <input type="text"
             value={type}
