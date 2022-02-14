@@ -7,7 +7,24 @@
   opacity: 90%;
 }
 
+.video {
+  max-width: 85%;
+  align-self: center;
+}
+
 .container li {
   background-color: purple;
   color: whitesmoke;
+}
+
+@media only screen and (min-width: 768px) {
+  .section {
+    width: 720px;
+    max-width: 75%;
+    align-items: center;
+  }
+  .video {
+    max-width: 60%;
+    align-self: center;
+  }
 }
