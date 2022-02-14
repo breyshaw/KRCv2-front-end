@@ -29,7 +29,7 @@ const AddItem = (props) => {
     }
   }
 
-  const { title, imageUrl, type, price, info } = formData
+  const { title, imageUrl, videoUrl, type, price, info } = formData
 
   const isFormInvalid = () => {
     return !(title && info)
@@ -59,6 +59,15 @@ const AddItem = (props) => {
             className='form-control border border-dark'
             value={imageUrl}
             name="imageUrl"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-8">
+          <p className='form-label'>Video URL (not required)</p>
+          <input type="text"
+            className='form-control border border-dark'
+            value={videoUrl}
+            name="videoUrl"
             onChange={handleChange}
           />
         </div>

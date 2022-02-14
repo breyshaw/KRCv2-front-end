@@ -9,11 +9,18 @@ const ItemDetails = (props) => {
   return (
     <main className={styles.container}>
       <div className="card bg-dark text-white text-center" style={{ width: '32rem' }}>
-        <img src={location.state.imageUrl} className="card-img-top" alt="..." />
+        {location.state.imageUrl ? 
+        <img src={location.state.imageUrl} className="card-img-top" alt="" />
+        : ''
+      }
+      {location.state.videoUrl ? 
+        <video src={location.state.videoUrl} className="card-img-top" alt="" />
+        : ''
+      }
         <div className="card-body">
           <h1 className="card-title">{location.state.title}</h1>
-          <p className="card-text">{location.state.info}</p>
           <p className="card-text m-0">Price: ${location.state.price}</p>
+          <p className="card-text">{location.state.info}</p>
           <a href="https://m.facebook.com/KatieRayneCreations/?__tn__=%2Cg">
           <img className="w-25 p-3" src={fb} alt="" />
           </a>
