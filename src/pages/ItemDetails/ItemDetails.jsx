@@ -10,6 +10,7 @@ const ItemDetails = (props) => {
     <main className={styles.container}>
       <section className={styles.section}>
         <div className="card bg-dark text-white text-center">
+          <h1 className="card-title">{location.state.title}</h1>
           {location.state.imageUrl ?
             <img src={location.state.imageUrl} className="card-img-top" alt="" />
             : ''
@@ -23,7 +24,6 @@ const ItemDetails = (props) => {
             }
           </div>
           <div className="card-body">
-            <h1 className="card-title">{location.state.title}</h1>
             <p className="card-text m-0">Price: ${location.state.price}</p>
             <p className="card-text mt-1 mb-1">{location.state.info}</p>
             <a href="https://m.facebook.com/KatieRayneCreations/?__tn__=%2Cg">
