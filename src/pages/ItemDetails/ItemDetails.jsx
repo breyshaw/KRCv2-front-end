@@ -13,7 +13,7 @@ const ItemDetails = (props) => {
         <div className="card-body">
           <h1 className="card-title">{location.state.title}</h1>
           <p className="card-text">{location.state.info}</p>
-          <p className="card-text m-0">Price: {location.state.price}</p>
+          <p className="card-text m-0">Price: ${location.state.price}</p>
           <a href="https://m.facebook.com/KatieRayneCreations/?__tn__=%2Cg">
           <img className="w-25 p-3" src={fb} alt="" />
           </a>
