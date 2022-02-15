@@ -6,7 +6,10 @@ const Items = (props) => {
     <main className={styles.container}>
       <h1>All Items</h1>
       <div className="row">
-        {props.items.map(item =>
+        {props.items.sort(function(x,y){
+          return new Date(y.updatedAt) - new Date(x.updatedAt)
+        })
+        .map(item =>
           <div key={item._id} className="col-sm-3">
             <div className="card">
               <div className="card-body">
@@ -17,7 +20,7 @@ const Items = (props) => {
                   : ''
                 }
                 {item.videoUrl ?
-                  <video className='card-img-top' autoplay='true'>
+                  <video className='card-img-top' autoPlay={true}>
                     <source src={item.videoUrl} type="video/mp4"/>
                   </video>
                   : ''
