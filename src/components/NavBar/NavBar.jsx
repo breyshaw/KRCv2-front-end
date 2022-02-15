@@ -63,7 +63,7 @@ const NavBar = ({ user, handleLogout }) => {
                   <a className="nav-link active" aria-current="page" href="/login"><h2 className="text-primary m-0">Login</h2></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/signup"><h3 className="text-primary m-0">Sign-Up</h3></a>
+                  <a className="nav-link active" aria-current="page" href="/signup"><h2 className="text-primary m-0">Sign-Up</h2></a>
                 </li>
               </ul>
             </div>
