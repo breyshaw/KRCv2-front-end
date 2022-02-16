@@ -6,7 +6,6 @@ const Items = (props) => {
     <main className={styles.container}>
       <h1>All Items</h1>
       <div className="row">
-{/* This sort function is not working in heroku for some reason, works locally */}
     {props.items.sort((x,y) => {
       return new Date(x.updatedAt) - new Date(y.updatedAt)
     })
