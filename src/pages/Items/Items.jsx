@@ -8,7 +8,7 @@ const Items = (props) => {
       <div className="row">
 {/* This sort function is not working in heroku for some reason, works locally */}
     {props.items.sort((x,y) => {
-      return new Date(y.updatedAt) - new Date(x.updatedAt)
+      return new Date(x.updatedAt) - new Date(y.updatedAt)
     })
         .map(item =>
           <div key={item._id} className="col-sm-3">
