@@ -6,9 +6,10 @@ const Items = (props) => {
     <main className={styles.container}>
       <h1>All Items</h1>
       <div className="row">
-        {props.items.sort(function(x,y){
-          return new Date(y.updatedAt) - new Date(x.updatedAt)
-        })
+{/* This sort function is not working in heroku for some reason, works locally */}
+    {props.items.sort((x,y) => {
+      return new Date(y.updatedAt) - new Date(x.updatedAt)
+    })
         .map(item =>
           <div key={item._id} className="col-sm-3">
             <div className="card">
