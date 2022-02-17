@@ -7,7 +7,7 @@ const Items = (props) => {
       <h1>All Items</h1>
       <div className="row">
     {props.items.sort((x,y) => {
-      return new Date(x.updatedAt) - new Date(y.updatedAt)
+      return new Date(y.updatedAt) - new Date(x.updatedAt)
     })
         .map(item =>
           <div key={item._id} className="col-sm-3">
