@@ -25,7 +25,7 @@ const Clothes = (props) => {
               </video>
                 : ''
               }
-              <p className="card-text mt-1 mb-0">{item.price}</p>
+              <p className="card-text mt-1 mb-0">${item.price}</p>
                 </div>
 
                 <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
