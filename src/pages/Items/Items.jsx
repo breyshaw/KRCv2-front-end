@@ -14,7 +14,6 @@ const Items = (props) => {
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{item.title}</h5>
-                {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                 {item.imageUrl ?
                   <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
                   : ''
@@ -25,6 +24,7 @@ const Items = (props) => {
                   </video>
                   : ''
                 }
+                <p className="card-text mt-1 mb-0">{item.price}</p>
               </div>
               <Link to='/itemDetails' state={item} className="btn btn-primary border border-dark">Details</Link>
 
