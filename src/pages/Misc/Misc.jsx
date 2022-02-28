@@ -13,7 +13,7 @@ const Misc = (props) => {
             <div key={item._id} className="col-sm-3">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{item.title}</h5>
+                  <h5 className="card-title text-center">{item.title}</h5>
                   {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                   {item.imageUrl ?
                 <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
