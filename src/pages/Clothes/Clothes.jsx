@@ -9,8 +9,8 @@ const Clothes = (props) => {
       <h2>Filter:</h2>
       <Link to="holiday">Holiday Clothing</Link>
       <Outlet />
-      {/* will create multiple links and outlets here for each of Katie's requested subcategories, may need to change fill structure to be more clean. */}
-      {/* if taking the route mentioned above, I can use this below but will ultimately need to remove this from the clothes page when all subcategories are made.... or figure out a way to hide this after going to the subcat */}
+      {/* will create multiple links and outlets here for each of Katie's requested subcategories, may need to change file structure to be more clean. */}
+      {/* if taking the route mentioned above, I can use this below but will ultimately need to remove this map and filter from the clothes page when all subcategories are made.... or figure out a way to hide this after going to the subcat */}
       <div className="row">
         {props.items
           .filter(item => item.type === 'clothes')
