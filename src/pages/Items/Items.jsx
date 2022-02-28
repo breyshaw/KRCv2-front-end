@@ -13,7 +13,7 @@ const Items = (props) => {
           <div key={item._id} className="col-sm-3">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">{item.title}</h5>
+                <h5 className="card-title text-center">{item.title}</h5>
                 {item.imageUrl ?
                   <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
                   : ''
