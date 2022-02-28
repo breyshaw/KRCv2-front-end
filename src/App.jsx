@@ -10,6 +10,7 @@ import Items from './pages/Items/Items'
 import ItemDetails from './pages/ItemDetails/ItemDetails'
 import EditItem from './pages/EditItem/EditItem'
 import Clothes from './pages/Clothes/Clothes'
+import Holiday from './pages/Holiday/Holiday'
 import Tumblers from './pages/Tumblers/Tumblers'
 import Misc from './pages/Misc/Misc'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
@@ -103,11 +104,18 @@ const App = () => {
           path="/itemDetails"
           element={<ItemDetails handleAddReview={handleAddReview} user={user} />}
         />
-        <Route path="/editItem" element={<EditItem handleUpdateItem={handleUpdateItem} />} />
+        <Route 
+        path="/editItem" 
+        element={<EditItem handleUpdateItem={handleUpdateItem} />} />
         <Route
           path="/clothes"
-          element={<Clothes items={items} user={user} />}
-        />
+          element={<Clothes items={items} user={user} />}>
+            <Route
+            path="holiday"
+            element={<Holiday />}
+            >
+            </Route>
+        </Route>
         <Route
           path="/tumblers"
           element={<Tumblers items={items} user={user} />}

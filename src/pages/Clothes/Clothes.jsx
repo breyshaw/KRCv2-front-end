@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import styles from '../Landing/Landing.module.css'
+import { Outlet } from 'react-router-dom';
 
 const Clothes = (props) => {
-  // props.items.filter(i => props.item.type === 'clothes')
   return (
     <main className={styles.container}>
       <h1>Clothing</h1>
+      <h2>Filter:</h2>
+      <Link to="holiday">Holiday Clothing</Link>
+      <Outlet />
+      {/* will create multiple links and outlets here for each of Katie's requested subcategories, may need to change fill structure to be more clean. */}
+      {/* if taking the route mentioned above, I can use this below but will ultimately need to remove this from the clothes page when all subcategories are made.... or figure out a way to hide this after going to the subcat */}
       <div className="row">
         {props.items
           .filter(item => item.type === 'clothes')
