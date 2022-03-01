@@ -70,12 +70,10 @@ const App = () => {
       })
   }
 
-  function Holiday() {
-    return <h1>Holiday Items</h1>
-  }
+  let filter = ""
 
-  function Movie_Shows() {
-    return <h1>Movie and TV Items</h1>
+  const handleClothesFilter = (filterData) => {
+    filter = filterData
   }
 
   return (
@@ -116,12 +114,7 @@ const App = () => {
           element={<EditItem handleUpdateItem={handleUpdateItem} />} />
         <Route
           path="/clothes"
-          element={<Clothes items={items} user={user} />}>
-          <Route
-            path="holiday"
-            element={<Holiday />}>
-          </Route>
-        </Route>
+          element={<Clothes items={items} user={user} handleClothesFilter={handleClothesFilter} filter={filter} />} />
         <Route
           path="/tumblers"
           element={<Tumblers items={items} user={user} />}

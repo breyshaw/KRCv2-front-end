@@ -37,7 +37,7 @@ const EditItem = (props) => {
 
   return (
     <>
-         <main className='text-center'>
+      <main className='text-center'>
       <h1 className='mt-4 mb-0'>Post an item, Admin!</h1>
       <form
         className={styles.container}
