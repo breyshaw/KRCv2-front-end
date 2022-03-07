@@ -8,6 +8,7 @@ const AddItem = (props) => {
     title: '',
     imageUrl: '',
     type: '',
+    subcat: '',
     price: '',
     info: '',
   })
@@ -29,7 +30,7 @@ const AddItem = (props) => {
     }
   }
 
-  const { title, imageUrl, videoUrl, type, price, info } = formData
+  const { title, imageUrl, videoUrl, type, subcat, price, info } = formData
 
   const isFormInvalid = () => {
     return !(title && info)
@@ -82,6 +83,17 @@ const AddItem = (props) => {
             <option>clothes</option>
             <option>tumblers</option>
             <option>misc</option>
+          </select>
+        </div>
+        <div className="col-4">
+          <p className='form-label'>Item Sub-category (for filters):</p>
+          <select name="subcat"
+            className='form-control border border-dark'
+            value={subcat}
+            onChange={handleChange}
+          >
+            <option>--Please choose an item subcategory--</option>
+            <option>holiday</option>
           </select>
         </div>
         <div className="col-2">
