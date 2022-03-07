@@ -24,7 +24,7 @@ const Tumblers = (props) => {
       >
         <div className="btn-group">
           <select name="filter"
-            className='btn btn-primary dropdown-toggle' data-toggle="dropdown"  aria-expanded='false'
+            className='btn btn-primary dropdown-toggle' data-toggle="dropdown" aria-expanded='false'
             value={filter}
             onChange={handleChange}
           >
@@ -82,10 +82,10 @@ const Tumblers = (props) => {
       }
 
 
-{filter === "holiday" ?
+      {filter === "holiday" ?
         <div className="row">
           {props.items
-          .filter(item => item.type === 'tumblers')
+            .filter(item => item.type === 'tumblers')
             .filter(item => item.subcat === 'holiday')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -94,16 +94,16 @@ const Tumblers = (props) => {
                     <h5 className="card-title text-center">{item.title}</h5>
                     {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                     {item.imageUrl ?
-                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
-                  : ''
-                }
-                  { item.videoUrl ? 
-                  <video className='card-img-top' autoplay='true'>
-                  <source src={item.videoUrl} type="video/mp4"/>
-                </video>
-                  : ''
-                }
-                <p className="card-text mt-1 mb-0">${item.price}</p>
+                      <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                      : ''
+                    }
+                    {item.videoUrl ?
+                      <video className='card-img-top' autoplay='true'>
+                        <source src={item.videoUrl} type="video/mp4" />
+                      </video>
+                      : ''
+                    }
+                    <p className="card-text mt-1 mb-0">${item.price}</p>
                   </div>
 
                   <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
@@ -127,7 +127,7 @@ const Tumblers = (props) => {
       {filter === "mom" ?
         <div className="row">
           {props.items
-          .filter(item => item.type === 'tumblers')
+            .filter(item => item.type === 'tumblers')
             .filter(item => item.subcat === 'mom')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -136,16 +136,16 @@ const Tumblers = (props) => {
                     <h5 className="card-title text-center">{item.title}</h5>
                     {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                     {item.imageUrl ?
-                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
-                  : ''
-                }
-                  { item.videoUrl ? 
-                  <video className='card-img-top' autoplay='true'>
-                  <source src={item.videoUrl} type="video/mp4"/>
-                </video>
-                  : ''
-                }
-                <p className="card-text mt-1 mb-0">${item.price}</p>
+                      <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                      : ''
+                    }
+                    {item.videoUrl ?
+                      <video className='card-img-top' autoplay='true'>
+                        <source src={item.videoUrl} type="video/mp4" />
+                      </video>
+                      : ''
+                    }
+                    <p className="card-text mt-1 mb-0">${item.price}</p>
                   </div>
 
                   <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
@@ -169,7 +169,7 @@ const Tumblers = (props) => {
       {filter === "baby" ?
         <div className="row">
           {props.items
-          .filter(item => item.type === 'tumblers')
+            .filter(item => item.type === 'tumblers')
             .filter(item => item.subcat === 'baby')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -178,16 +178,16 @@ const Tumblers = (props) => {
                     <h5 className="card-title text-center">{item.title}</h5>
                     {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                     {item.imageUrl ?
-                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
-                  : ''
-                }
-                  { item.videoUrl ? 
-                  <video className='card-img-top' autoplay='true'>
-                  <source src={item.videoUrl} type="video/mp4"/>
-                </video>
-                  : ''
-                }
-                <p className="card-text mt-1 mb-0">${item.price}</p>
+                      <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                      : ''
+                    }
+                    {item.videoUrl ?
+                      <video className='card-img-top' autoplay='true'>
+                        <source src={item.videoUrl} type="video/mp4" />
+                      </video>
+                      : ''
+                    }
+                    <p className="card-text mt-1 mb-0">${item.price}</p>
                   </div>
 
                   <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
@@ -211,7 +211,7 @@ const Tumblers = (props) => {
       {filter === "sports" ?
         <div className="row">
           {props.items
-          .filter(item => item.type === 'tumblers')
+            .filter(item => item.type === 'tumblers')
             .filter(item => item.subcat === 'sports')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -220,16 +220,16 @@ const Tumblers = (props) => {
                     <h5 className="card-title text-center">{item.title}</h5>
                     {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                     {item.imageUrl ?
-                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
-                  : ''
-                }
-                  { item.videoUrl ? 
-                  <video className='card-img-top' autoplay='true'>
-                  <source src={item.videoUrl} type="video/mp4"/>
-                </video>
-                  : ''
-                }
-                <p className="card-text mt-1 mb-0">${item.price}</p>
+                      <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                      : ''
+                    }
+                    {item.videoUrl ?
+                      <video className='card-img-top' autoplay='true'>
+                        <source src={item.videoUrl} type="video/mp4" />
+                      </video>
+                      : ''
+                    }
+                    <p className="card-text mt-1 mb-0">${item.price}</p>
                   </div>
 
                   <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
@@ -253,7 +253,7 @@ const Tumblers = (props) => {
       {filter === "movies_shows" ?
         <div className="row">
           {props.items
-          .filter(item => item.type === 'tumblers')
+            .filter(item => item.type === 'tumblers')
             .filter(item => item.subcat === 'movies_shows')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -262,16 +262,16 @@ const Tumblers = (props) => {
                     <h5 className="card-title text-center">{item.title}</h5>
                     {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                     {item.imageUrl ?
-                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
-                  : ''
-                }
-                  { item.videoUrl ? 
-                  <video className='card-img-top' autoplay='true'>
-                  <source src={item.videoUrl} type="video/mp4"/>
-                </video>
-                  : ''
-                }
-                <p className="card-text mt-1 mb-0">${item.price}</p>
+                      <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                      : ''
+                    }
+                    {item.videoUrl ?
+                      <video className='card-img-top' autoplay='true'>
+                        <source src={item.videoUrl} type="video/mp4" />
+                      </video>
+                      : ''
+                    }
+                    <p className="card-text mt-1 mb-0">${item.price}</p>
                   </div>
 
                   <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
@@ -295,7 +295,7 @@ const Tumblers = (props) => {
       {filter === "custom_order" ?
         <div className="row">
           {props.items
-          .filter(item => item.type === 'tumblers')
+            .filter(item => item.type === 'tumblers')
             .filter(item => item.subcat === 'custom_order')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -304,16 +304,16 @@ const Tumblers = (props) => {
                     <h5 className="card-title text-center">{item.title}</h5>
                     {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
                     {item.imageUrl ?
-                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
-                  : ''
-                }
-                  { item.videoUrl ? 
-                  <video className='card-img-top' autoplay='true'>
-                  <source src={item.videoUrl} type="video/mp4"/>
-                </video>
-                  : ''
-                }
-                <p className="card-text mt-1 mb-0">${item.price}</p>
+                      <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                      : ''
+                    }
+                    {item.videoUrl ?
+                      <video className='card-img-top' autoplay='true'>
+                        <source src={item.videoUrl} type="video/mp4" />
+                      </video>
+                      : ''
+                    }
+                    <p className="card-text mt-1 mb-0">${item.price}</p>
                   </div>
 
                   <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
