@@ -94,6 +94,11 @@ const AddItem = (props) => {
           >
             <option>--Please choose an item subcategory--</option>
             <option>holiday</option>
+            <option>mom</option>
+            <option>baby</option>
+            <option>sports</option>
+            <option>movies_shows</option>
+            <option>custom_order</option>
           </select>
         </div>
         <div className="col-2">
