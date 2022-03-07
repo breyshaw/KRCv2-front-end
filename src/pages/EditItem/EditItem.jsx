@@ -8,6 +8,7 @@ const EditItem = (props) => {
     title: location.state.title,
     imageUrl: location.state.imageUrl,
     type: location.state.type,
+    subcat: location.state.subcat,
     price: location.state.price,
     info: location.state.info,
     id: location.state._id
@@ -29,7 +30,7 @@ const EditItem = (props) => {
     }
   }
 
-  const { title, imageUrl, videoUrl, type, price, info } = formData
+  const { title, imageUrl, videoUrl, type, subcat, price, info } = formData
 
   const isFormInvalid = () => {
     return !(title && info)
@@ -83,6 +84,22 @@ const EditItem = (props) => {
             <option>clothes</option>
             <option>tumblers</option>
             <option>misc</option>
+          </select>
+        </div>
+        <div className="col-4">
+          <p className='form-label'>Item Sub-category (for filters):</p>
+          <select name="subcat"
+            className='form-control border border-dark'
+            value={subcat}
+            onChange={handleChange}
+          >
+            <option>--Please choose an item subcategory--</option>
+            <option>holiday</option>
+            <option>mom</option>
+            <option>baby</option>
+            <option>sports</option>
+            <option>movies_shows</option>
+            <option>custom_order</option>
           </select>
         </div>
         <div className="col-2">
