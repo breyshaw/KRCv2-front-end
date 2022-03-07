@@ -10,7 +10,7 @@ const Misc = (props) => {
         {props.items
           .filter(item => item.type === 'misc')
           .map(item =>
-            <div key={item._id} className="col-sm-3">
+            <div key={item._id} className="col-sm-4">
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title text-center">{item.title}</h5>
