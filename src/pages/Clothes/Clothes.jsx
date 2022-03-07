@@ -86,6 +86,7 @@ const Clothes = (props) => {
 {filter === "holiday" ?
         <div className="row">
           {props.items
+          .filter(item => item.type === 'clothes')
             .filter(item => item.subcat === 'holiday')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -127,6 +128,7 @@ const Clothes = (props) => {
       {filter === "mom" ?
         <div className="row">
           {props.items
+          .filter(item => item.type === 'clothes')
             .filter(item => item.subcat === 'mom')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -168,6 +170,7 @@ const Clothes = (props) => {
       {filter === "baby" ?
         <div className="row">
           {props.items
+          .filter(item => item.type === 'clothes')
             .filter(item => item.subcat === 'baby')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -209,6 +212,7 @@ const Clothes = (props) => {
       {filter === "sports" ?
         <div className="row">
           {props.items
+          .filter(item => item.type === 'clothes')
             .filter(item => item.subcat === 'sports')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -250,6 +254,7 @@ const Clothes = (props) => {
       {filter === "movies_shows" ?
         <div className="row">
           {props.items
+          .filter(item => item.type === 'clothes')
             .filter(item => item.subcat === 'movies_shows')
             .map(item =>
               <div key={item._id} className="col-sm-4">
@@ -291,6 +296,7 @@ const Clothes = (props) => {
       {filter === "custom_order" ?
         <div className="row">
           {props.items
+          .filter(item => item.type === 'clothes')
             .filter(item => item.subcat === 'custom_order')
             .map(item =>
               <div key={item._id} className="col-sm-4">
