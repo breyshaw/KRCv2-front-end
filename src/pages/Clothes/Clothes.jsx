@@ -31,6 +31,7 @@ const Clothes = (props) => {
           >
             <option value="all">All Clothes</option>
             <option value="holiday">Holiday</option>
+            <option value="mom">Mom</option>
             <option value="baby">Baby</option>
             <option value="sports">Sports</option>
             <option value="movies_shows">Movies and Shows</option>
