@@ -82,7 +82,8 @@ const Clothes = (props) => {
         : ''
       }
 
-      {filter === "holiday" ?
+
+{filter === "holiday" ?
         <div className="row">
           {props.items
             .filter(item => item.subcat === 'holiday')
@@ -123,55 +124,174 @@ const Clothes = (props) => {
         </div>
         : ''
       }
-
       {filter === "mom" ?
-        <h2>Mom items!</h2>
+        <div className="row">
+          {props.items
+            .filter(item => item.subcat === 'mom')
+            .map(item =>
+              <div key={item._id} className="col-sm-4">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title text-center">{item.title}</h5>
+                    {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
+                    {item.imageUrl ?
+                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                  : ''
+                }
+                  { item.videoUrl ? 
+                  <video className='card-img-top' autoplay='true'>
+                  <source src={item.videoUrl} type="video/mp4"/>
+                </video>
+                  : ''
+                }
+                <p className="card-text mt-1 mb-0">${item.price}</p>
+                  </div>
 
+                  <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
+
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <Link to="/editItem" className="btn btn-warning" state={item}>Edit</Link>
+                    : ''
+                  }
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger">Delete</button>
+                    : ''
+                  }
+                </div>
+              </div>
+            )}
+        </div>
         : ''
+      }
+      {filter === "baby" ?
+        <div className="row">
+          {props.items
+            .filter(item => item.subcat === 'baby')
+            .map(item =>
+              <div key={item._id} className="col-sm-4">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title text-center">{item.title}</h5>
+                    {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
+                    {item.imageUrl ?
+                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                  : ''
+                }
+                  { item.videoUrl ? 
+                  <video className='card-img-top' autoplay='true'>
+                  <source src={item.videoUrl} type="video/mp4"/>
+                </video>
+                  : ''
+                }
+                <p className="card-text mt-1 mb-0">${item.price}</p>
+                  </div>
 
-        // <div className="row">
-        //   {props.items
-        //     .filter(item => item.type === 'clothes')
-        //     .map(item =>
-        //       <div key={item._id} className="col-sm-3">
-        //         <div className="card">
-        //           <div className="card-body">
-        //             <h5 className="card-title text-center">{item.title}</h5>
-        //             {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
-        //             {item.imageUrl ?
-        //           <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
-        //           : ''
-        //         }
-        //           { item.videoUrl ? 
-        //           <video className='card-img-top' autoplay='true'>
-        //           <source src={item.videoUrl} type="video/mp4"/>
-        //         </video>
-        //           : ''
-        //         }
-        //         <p className="card-text mt-1 mb-0">${item.price}</p>
-        //           </div>
+                  <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
 
-        //           <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <Link to="/editItem" className="btn btn-warning" state={item}>Edit</Link>
+                    : ''
+                  }
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger">Delete</button>
+                    : ''
+                  }
+                </div>
+              </div>
+            )}
+        </div>
+        : ''
+      }
+      {filter === "sports" ?
+        <div className="row">
+          {props.items
+            .filter(item => item.subcat === 'sports')
+            .map(item =>
+              <div key={item._id} className="col-sm-4">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title text-center">{item.title}</h5>
+                    {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
+                    {item.imageUrl ?
+                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                  : ''
+                }
+                  { item.videoUrl ? 
+                  <video className='card-img-top' autoplay='true'>
+                  <source src={item.videoUrl} type="video/mp4"/>
+                </video>
+                  : ''
+                }
+                <p className="card-text mt-1 mb-0">${item.price}</p>
+                  </div>
 
-        //           {props.user ?
-        //             (props.user.isAdmin) &&
-        //             <Link to="/editItem" className="btn btn-warning" state={item}>Edit</Link>
-        //             : ''
-        //           }
-        //           {props.user ?
-        //             (props.user.isAdmin) &&
-        //             <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger">Delete</button>
-        //             : ''
-        //           }
-        //         </div>
-        //       </div>
-        //     )}
-        // </div>
+                  <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
+
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <Link to="/editItem" className="btn btn-warning" state={item}>Edit</Link>
+                    : ''
+                  }
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger">Delete</button>
+                    : ''
+                  }
+                </div>
+              </div>
+            )}
+        </div>
+        : ''
       }
       {filter === "movies_shows" ?
         <div className="row">
           {props.items
             .filter(item => item.subcat === 'movies_shows')
+            .map(item =>
+              <div key={item._id} className="col-sm-4">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title text-center">{item.title}</h5>
+                    {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
+                    {item.imageUrl ?
+                  <img src={item.imageUrl} className="card-img-bottom" alt=''></img>
+                  : ''
+                }
+                  { item.videoUrl ? 
+                  <video className='card-img-top' autoplay='true'>
+                  <source src={item.videoUrl} type="video/mp4"/>
+                </video>
+                  : ''
+                }
+                <p className="card-text mt-1 mb-0">${item.price}</p>
+                  </div>
+
+                  <Link to='/itemDetails' state={item} className="btn btn-primary">Details</Link>
+
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <Link to="/editItem" className="btn btn-warning" state={item}>Edit</Link>
+                    : ''
+                  }
+                  {props.user ?
+                    (props.user.isAdmin) &&
+                    <button onClick={() => props.handleDeleteItem(item._id)} className="btn btn-danger">Delete</button>
+                    : ''
+                  }
+                </div>
+              </div>
+            )}
+        </div>
+        : ''
+      }
+      {filter === "custom_order" ?
+        <div className="row">
+          {props.items
+            .filter(item => item.subcat === 'custom_order')
             .map(item =>
               <div key={item._id} className="col-sm-4">
                 <div className="card">
