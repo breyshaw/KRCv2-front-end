@@ -25,12 +25,16 @@ const NavBar = ({ user, handleLogout }) => {
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/misc"><h2 className='m-0'>Misc</h2></a>
                 </li>
-                <li className="nav-item"><Link className="nav-link active text-danger m-0" aria-current="page" to="" onClick={handleLogout}>LOG OUT</Link></li>
                 {user ?
                   (user.isAdmin) &&
-                  <Link to="/addItem" className="btn btn-primary">Add Item</Link>
+                  <Link className='nav-link active mt-1' to="/addItem">
+                    <button className="btn btn-primary btn-sm nav-item">
+                      Add Item
+                    </button>
+                  </Link>
                   : ''
                 }
+                <li className="nav-item"><Link className="nav-link active text-danger m-0" aria-current="page" to="" onClick={handleLogout}>LOG OUT</Link></li>
               </ul>
             </div>
           </div>
