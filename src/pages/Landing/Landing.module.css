@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   color: black;
-  margin: 25px;
+  margin: 25px 25px 0px 25px;
 }
 
 .logo {
@@ -17,7 +17,8 @@
 
 p {
   font-size: 1.6rem;
-  text-align: center;
+  text-align: center; 
+  margin-top: 0;
 }
 
 @media only screen and (min-width: 768px) {

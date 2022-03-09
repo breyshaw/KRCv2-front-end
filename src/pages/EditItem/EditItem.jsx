@@ -1,7 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import React, { useState } from 'react';
 import styles from './EditItem.module.css'
-import AddItem from "../AddItem/AddItem";
 
 const EditItem = (props) => {
   const location = useLocation()
