@@ -1,6 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import React, { useState } from 'react';
 import styles from './EditItem.module.css'
+import AddItem from "../AddItem/AddItem";
 
 const EditItem = (props) => {
   const location = useLocation()
@@ -39,7 +40,7 @@ const EditItem = (props) => {
   return (
     <>
       <main className='text-center'>
-        <h1 className='mt-4 mb-0'>Post an item, Admin!</h1>
+        <h1 className='mt-4 mb-0'>Editing "{location.state.title}"</h1>
         <form
           className={styles.container}
           autoComplete="off"
