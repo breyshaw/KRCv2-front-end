@@ -34,7 +34,10 @@ const NavBar = ({ user, handleLogout }) => {
                   </Link>
                   : ''
                 }
-                <li className="nav-item"><Link className="nav-link active text-danger m-0" aria-current="page" to="" onClick={handleLogout}>LOG OUT</Link></li>
+                <Link className="nav-link active mt-1" aria-current="page" to="" onClick={handleLogout}>
+                  <button className="btn btn-danger btn-sm">Log out
+                  </button>
+                </Link>
               </ul>
             </div>
           </div>
