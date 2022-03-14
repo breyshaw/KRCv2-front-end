@@ -44,7 +44,7 @@ const ReviewForm = (props) => {
           onChange={handleChange}
         /> */}
         <p>Rating:</p>
-        <select 
+        <select
           className='form-control'
           name="rating"
           value={rating}
@@ -59,7 +59,7 @@ const ReviewForm = (props) => {
         </select>
 
         <p>Review:</p>
-        <textarea 
+        <textarea
           type="text"
           value={content}
           name="content"
