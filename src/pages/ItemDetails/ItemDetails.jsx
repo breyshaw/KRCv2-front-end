@@ -35,7 +35,8 @@ const ItemDetails = (props) => {
             <>
               {location.state.reviews.map(review =>
                 <ul key={review._id} className="list-group list-group-flush">
-                  <li className="list-group-item"><p>
+                  <li className="list-group-item">
+                    <p id={styles.review_text}>
                     Rating: {review.rating} <br /> Review: <br /> {review.content} <br /> By: {review.author.name}
                   </p>
                   </li>
